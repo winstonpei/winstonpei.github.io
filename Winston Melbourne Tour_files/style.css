@@ -1,0 +1,479 @@
+/* ==========================================================================
+  winston's custom styles
+   ========================================================================== */
+
+/* for body */
+body {
+    font-family: 'Lato', sans-serif;
+    color: #454545;
+}
+
+/* set margin for header */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+/* .placeholder {
+    background: lightslategray;
+    height: 100vh;
+} */
+
+/* writing for navibar */
+.global-header {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 40px;
+    padding: 15px 25px;
+    width: calc(100% - 50px);
+}
+
+
+.nav-left {
+    align-items: center;
+    display: flex;
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+
+}
+
+.logo img {
+    width: 150px;
+    height: 50px;
+
+}
+
+.nav {
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+    padding-left: 0;
+}
+
+@media (min-width: 1085px) {
+    .nav {
+        display: flex;
+    }
+}
+
+ul {
+    list-style: none;
+}
+
+.nav li {
+    font-size: 14px;
+    margin: 0 20px;
+    cursor: pointer;
+}
+
+.nav-right {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 45px;
+}
+
+/* DROPDOWN MENU */
+.dropdown-menu {
+    background-color: white;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, .1);
+    /* creates a border */
+    display: none;
+    padding: 15px;
+    position: absolute;
+    /* pops element up in the dom */
+    top: 60px;
+    /* just visually aligned this */
+    width: 250px;
+    z-index: 10;
+
+}
+
+
+.dropdown-menu#menu-1 {
+    left: 190px;
+}
+
+.dropdown-menu#menu-2 {
+    left: 290px;
+    min-width: 400px;
+}
+
+.dropdown-menu#menu-3 {
+    left: 390px;
+    min-width: 400px;
+}
+
+.menu-header {
+    font-size: 12px;
+    margin: 0;
+    padding: 0 10px 8px 10px;
+    /* eyeballin' it - you know */
+    text-transform: uppercase;
+}
+
+.menu-item-list {
+    margin: 0;
+    padding-left: 0;
+}
+
+.menu-item-list li a,
+.menu-item-list li a:visited,
+.menu-item-list li a:focus {
+    color: #454545;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.menu-item-list li a:hover {
+    background-color: rgb(242, 242, 242);
+    color: #1264a3;
+}
+
+/* Fade-in header */
+#fade-in-header {
+    display: none;
+    position: fixed;
+    top: 0;
+}
+
+#top-nav {
+    position: fixed;
+}
+
+.show {
+    display: block;
+}
+
+
+/* SIDE MENU */
+.workspaces {
+    background-color: rgba(99, 152, 202, .6);
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    display: none;
+
+    padding: 8px 16px;
+    transition: all 420ms ease-in-out;
+
+}
+
+
+.workspaces:hover {
+    background-color: rgb(3, 47, 88);
+}
+
+@media (min-width: 1085px) {
+    .workspaces {
+        display: block;
+    }
+}
+
+.hamburger-menu {
+    display: block;
+    /* display:none starts to show up with responsive */
+    cursor: pointer;
+}
+
+/* why this breakpoint? ask the slack people - they choose it (it's not great tbh) */
+@media (min-width: 1085px) {
+    .hamburger-menu {
+        display: none;
+    }
+}
+
+.main-menu-appear {
+    display: block;
+}
+
+/**
+   * =============
+   * OFF-CANVAS MENU
+   * =============
+   *
+   * Lot going on here, let's break it down
+   * Slack has an image with a translucent bg which combines bg color and image together
+   * position: fixed with 0,0,0,0 positions streches across the viewport
+   * z-index: 2 keeps it on top of the rest of the page
+   * I'm breaking the side-menu parent into two styles, one position and on design, so you can see how this looks better
+   * You don't have to do it this way at all...but it helps to see the separation of concerns here
+   */
+.side-menu-position {
+    padding-top: 25px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.side-menu-design {
+    background-color: rgba(66, 91, 158, 0.95);
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2522641/sidebar-background.png");
+    background-size: 1300px 700px;
+    background-repeat: repeat;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: 0.5s ease-in-out;
+}
+
+/* on top we need spacing from the border, so we have to use padding */
+/* but we also want that bottom margin to bleed to the edge, so no margins here */
+.side-menu-header {
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+    /* based on slack look, very faint */
+    display: flex;
+    justify-content: space-between;
+    padding: 0 25px 25px 25px;
+}
+
+.sideMenuLogo {
+    height: 50px;
+}
+
+/* Main content is pretty easy for layouts, pattern you'll see in web dev */
+/* The more text an element has, the easier it is to layout - BAM wisdom bomb! */
+.side-menu-content {
+    color: #fff;
+    font-size: 24px;
+    /* could use ems here I guess but eh... */
+    margin: 25px;
+    padding-left: 0;
+    /* zeroing it out */
+}
+
+.side-menu-content li {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+.side-menu-content li,
+.side-menu-content li:visited,
+.side-menu-content li:focus {
+    color: white;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.side-menu-content li:hover {
+    background-color: rgb(242, 242, 242);
+    color: #1264a3;
+}
+
+.side-menu-workspace {
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.side-menu-navi {
+    background-color: rgb(105, 72, 72, 0.5);
+    border-radius: 5px;
+
+    color: #d89e42f1;
+    padding: 15px 0;
+    text-align: center;
+    width: 100%;
+}
+
+/* for design of sub menu */
+.sub-menu-design {
+    background-color: rgb(66, 91, 158);
+    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/2522641/sidebar-background.png');
+    background-size: 1300px 700px;
+    background-repeat: repeat;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: 0.5s ease-in-out;
+}
+
+.side-menu-content a,
+.side-menu-content a:visited,
+.side-menu-content a:focus {
+    color: white;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.side-menu-content a:hover {
+    background-color: rgb(242, 242, 242);
+    color: #1264a3;
+}
+
+/* Sticks the nav to the top of the page */
+#top-nav {
+    position: fixed;
+}
+
+
+/**
+   * Animation classes
+   */
+.show-menu {
+    opacity: 1;
+    transform: translateX(0%);
+}
+
+
+
+
+
+/* ==========================================================================
+     Helper classes
+     ========================================================================== */
+
+/*
+   * Hide visually and from screen readers
+   */
+
+.hidden {
+    display: none !important;
+}
+
+/*
+   * Hide only visually, but have it available for screen readers:
+   * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+   *
+   * 1. For long content, line feeds are not interpreted as spaces and small width
+   *    causes content to wrap 1 word per line:
+   *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+   */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
+    /* 1 */
+}
+
+/*
+   * Extends the .visuallyhidden class to allow the element
+   * to be focusable when navigated to via the keyboard:
+   * https://www.drupal.org/node/897638
+   */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    -webkit-clip-path: none;
+    clip-path: none;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+    white-space: inherit;
+}
+
+/*
+   * Hide visually and from screen readers, but maintain layout
+   */
+
+.invisible {
+    visibility: hidden;
+}
+
+/* make background image darker */
+.image-mask-darken {
+    position: relative;
+}
+
+.image-mask-darken::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    content: "";
+
+}
+
+.wmt-main-photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 550px;
+    background-image: url("section-background-image.jpg");
+    background-position: center center;
+    background-size: cover;
+}
+
+.wmt-intro-content {
+    color: white;
+    position: absolute;
+    text-align: center;
+    width: 500px;
+}
+
+.wmt-intro-header {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.wmt-intro-subtitle {
+    font-size: 16px;
+}
+
+/* for footer */
+footer {
+    background-color: rgba(84, 140, 201, 0.3);
+    color: black;
+    height: 100%;
+}
+
+.wmt-footer-navi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-links {
+    padding: 20px 0px 0px 30px;
+}
+
+footer ul {
+    list-style: none;
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    opacity: .5;
+    padding: 0px;
+}
+
+footer li {
+    margin: 0px 20px;
+}
+
+.copyright li {
+    font-size: 10px;
+    font-weight: normal;
+    margin: 0px 30px;
+}

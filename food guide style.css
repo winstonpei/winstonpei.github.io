@@ -1,0 +1,392 @@
+/* ==========================================================================
+  winston's custom styles
+   ========================================================================== */
+
+/* for body */
+body {
+    font-family: 'Lato', sans-serif;
+    color: #454545;
+}
+
+/* set margin for header */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+/* writing for navibar */
+.global-header {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 40px;
+    padding: 15px 25px;
+    width: calc(100% - 50px);
+}
+
+
+.nav-left {
+    align-items: center;
+    display: flex;
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.logo img {
+    width: 150px;
+    height: 50px;
+
+}
+
+.nav {
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+    padding-left: 0;
+    /* position: sticky; */
+}
+
+@media (min-width: 1085px) {
+    .nav {
+        display: flex;
+    }
+}
+
+ul {
+    list-style: none;
+}
+
+.nav li {
+    font-size: 14px;
+    margin: 0 20px;
+    cursor: pointer;
+}
+
+.nav-right {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 45px;
+}
+
+/* DROPDOWN MENU */
+.dropdown-menu {
+    background-color: white;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, .1);
+    /* creates a border */
+    display: none;
+    padding: 15px;
+    position: absolute;
+    /* pops element up in the dom */
+    top: 60px;
+    /* just visually aligned this */
+    width: 250px;
+    z-index: 10;
+
+}
+
+
+.dropdown-menu#menu-1 {
+    left: 190px;
+    /* position: sticky;  can do a follow-up*/
+}
+
+.dropdown-menu#menu-2 {
+    left: 290px;
+    min-width: 400px;
+}
+
+.dropdown-menu#menu-3 {
+    left: 390px;
+    min-width: 400px;
+}
+
+.menu-header {
+    font-size: 12px;
+    margin: 0;
+    padding: 0 10px 8px 10px;
+    text-transform: uppercase;
+}
+
+.menu-item-list {
+    margin: 0;
+    padding-left: 0;
+}
+
+.menu-item-list li a,
+.menu-item-list li a:visited,
+.menu-item-list li a:focus {
+    color: #454545;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.menu-item-list li a:hover {
+    background-color: rgb(242, 242, 242);
+    color: #1264a3;
+}
+
+/* Fade-in header */
+#fade-in-header {
+    display: none;
+    position: fixed;
+    top: 0;
+}
+
+#top-nav {
+    position: fixed;
+}
+
+.show {
+    display: block;
+}
+
+
+/* SIDE MENU */
+.workspaces {
+    background-color: rgba(99, 152, 202, .6);
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    display: none;
+    padding: 8px 16px;
+    transition: all 420ms ease-in-out;
+
+}
+
+
+.workspaces:hover {
+    background-color: rgb(3, 47, 88);
+}
+
+@media (min-width: 1085px) {
+    .workspaces {
+        display: block;
+    }
+}
+
+.hamburger-menu {
+    display: block;
+    cursor: pointer;
+}
+
+/* why this breakpoint? ask the slack people - they choose it (it's not great tbh) */
+@media (min-width: 1085px) {
+    .hamburger-menu {
+        display: none;
+    }
+}
+
+.main-menu-appear {
+    display: block;
+}
+
+.side-menu-position {
+    padding-top: 25px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.side-menu-design {
+    background-color: rgba(66, 91, 158, 0.95);
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2522641/sidebar-background.png");
+    background-size: 1300px 700px;
+    background-repeat: repeat;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: 0.5s ease-in-out;
+}
+
+/* on top we need spacing from the border, so we have to use padding */
+/* but we also want that bottom margin to bleed to the edge, so no margins here */
+.side-menu-header {
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+    /* based on slack look, very faint */
+    display: flex;
+    justify-content: space-between;
+    padding: 0 25px 25px 25px;
+}
+
+.sideMenuLogo {
+    height: 50px;
+}
+
+/* Main content is pretty easy for layouts, pattern you'll see in web dev */
+/* The more text an element has, the easier it is to layout - BAM wisdom bomb! */
+.side-menu-content {
+    color: #fff;
+    font-size: 24px;
+    /* could use ems here I guess but eh... */
+    margin: 25px;
+    padding-left: 0;
+    /* zeroing it out */
+}
+
+.side-menu-content li {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+.side-menu-content li,
+.side-menu-content li:visited,
+.side-menu-content li:focus {
+    color: white;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.side-menu-content li:hover {
+    background-color: rgb(242, 242, 242);
+    color: #1264a3;
+}
+
+.side-menu-workspace {
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.side-menu-navi {
+    background-color: rgb(105, 72, 72, 0.5);
+    border-radius: 5px;
+    color: #d89e42f1;
+    padding: 15px 0;
+    text-align: center;
+    width: 100%;
+}
+
+/* for design of sub menu */
+.sub-menu-design {
+    background-color: rgb(66, 91, 158);
+    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/2522641/sidebar-background.png');
+    background-size: 1300px 700px;
+    background-repeat: repeat;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: 0.5s ease-in-out;
+}
+
+.side-menu-content a,
+.side-menu-content a:visited,
+.side-menu-content a:focus {
+    color: white;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.side-menu-content a:hover {
+    background-color: rgb(242, 242, 242);
+    color: #1264a3;
+}
+
+/* Sticks the nav to the top of the page */
+#top-nav {
+    position: fixed;
+}
+
+
+/**
+   * Animation classes
+   */
+
+.show-menu {
+    opacity: 1;
+    transform: translateX(0%);
+}
+
+/* for main */
+
+.food-main {
+    display: flex;
+    justify-content: center;
+}
+
+.wmt-food-intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    width: 90%;
+    border: 2px solid black;
+
+}
+
+.wmt-food-position {
+    margin: 20px;
+    position: fixed;
+    top: 60px;
+    padding: auto;
+}
+
+
+.wmt-slogan-background {
+    background-image: url("joseph-chan-7JTFELknIis-unsplash.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+
+.wmt-food-main-slogan h3 {
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.wmt-food-main-slogan p {
+    color: rgb(248, 248, 248);
+    font-size: 15px;
+    text-align: center;
+    padding: auto;
+}
+
+
+
+.category-1-sevenseeds {
+    position: relative;
+    top: 450px;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+wmt-sevenseeds {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.sevenseeds-photo {
+    background-image: url("seven-seeds.jpeg");
+    background-position: center center;
+    background-size: cover;
+    height: 200px;
+    width: 80%;
+
+}
+
+.introduction-sevenseeds {
+    color: black;
+    text-align: center;
+    width: 80%;
+}

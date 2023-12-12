@@ -1,0 +1,637 @@
+/* ==========================================================================
+  winston's custom styles
+   ========================================================================== */
+
+/* for body */
+body {
+    font-family: 'Lato', sans-serif;
+    color: #454545;
+}
+
+/* set margin for header */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+
+/* writing for navibar */
+.global-header {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 40px;
+    padding: 15px 25px;
+    width: calc(100% - 50px);
+}
+
+
+.nav-left {
+    align-items: center;
+    display: flex;
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 150px;
+    height: 50px;
+
+}
+
+/* responsive for mobile and desktop, using display none as seperate*/
+.nav {
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+    padding-left: 0;
+    /* position: sticky; */
+}
+
+@media (min-width: 568px) {
+    .nav {
+        display: flex;
+    }
+}
+
+ul {
+    list-style: none;
+}
+
+.nav li {
+    font-size: 14px;
+    margin: 0 20px;
+    cursor: pointer;
+}
+
+.nav-right {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 45px;
+}
+
+/* DROPDOWN MENU */
+.dropdown-menu {
+    background-color: white;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, .1);
+    display: none;
+    padding: 15px;
+    position: absolute;
+    /* pops element up in the dom */
+    top: 60px;
+    /* just visually aligned this */
+    width: 250px;
+    z-index: 10;
+
+}
+
+
+.dropdown-menu#menu-1 {
+    left: 190px;
+    /* position: sticky;  can do a follow-up*/
+}
+
+.dropdown-menu#menu-2 {
+    left: 290px;
+    min-width: 400px;
+}
+
+.dropdown-menu#menu-3 {
+    left: 390px;
+    min-width: 400px;
+}
+
+.menu-header {
+    font-size: 12px;
+    margin: 0;
+    padding: 0 10px 8px 10px;
+    text-transform: uppercase;
+}
+
+.menu-item-list {
+    margin: 0;
+    padding-left: 0;
+}
+
+.menu-item-list li a,
+.menu-item-list li a:visited,
+.menu-item-list li a:focus {
+    color: #454545;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.menu-item-list li a:hover {
+    background-color: rgb(242, 242, 242);
+    color: #1264a3;
+}
+
+#top-nav {
+    position: fixed;
+}
+
+
+/* SIDE MENU */
+.workspaces {
+    background-color: rgba(99, 152, 202, .6);
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    display: none;
+    padding: 8px 16px;
+    transition: all 420ms ease-in-out;
+
+}
+
+
+.workspaces:hover {
+    background-color: rgb(3, 47, 88);
+}
+
+@media (min-width: 568px) {
+    .workspaces {
+        display: block;
+    }
+}
+
+.hamburger-menu {
+    display: block;
+    cursor: pointer;
+}
+
+@media (min-width: 568px) {
+    .hamburger-menu {
+        display: none;
+    }
+}
+
+.main-menu-appear {
+    display: block;
+}
+
+
+.side-menu-position {
+    padding-top: 25px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.side-menu-design {
+    background-color: rgba(66, 91, 158, 0.95);
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2522641/sidebar-background.png");
+    background-size: 1300px 700px;
+    background-repeat: repeat;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: 0.5s ease-in-out;
+}
+
+/* on top we need spacing from the border, so we have to use padding */
+/* but we also want that bottom margin to bleed to the edge, so no margins here */
+.side-menu-header {
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+    /* based on slack look, very faint */
+    display: flex;
+    justify-content: space-between;
+    padding: 0 25px 25px 25px;
+}
+
+.sideMenuLogo {
+    height: 50px;
+}
+
+.side-menu-content {
+    color: #fff;
+    font-size: 24px;
+    /* could use ems here I guess but eh... */
+    margin: 25px;
+    padding-left: 0;
+    /* zeroing it out */
+}
+
+.side-menu-content li {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+.side-menu-content li,
+.side-menu-content li:visited,
+.side-menu-content li:focus {
+    color: white;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.side-menu-content li:hover {
+    background-color: rgb(242, 242, 242);
+    color: #1264a3;
+}
+
+.side-menu-workspace {
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.side-menu-navi {
+    background-color: rgb(105, 72, 72, 0.5);
+    border-radius: 5px;
+
+    color: #d89e42f1;
+    padding: 15px 0;
+    text-align: center;
+    width: 100%;
+}
+
+/* for design of sub menu */
+.sub-menu-design {
+    background-color: rgb(66, 91, 158);
+    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/2522641/sidebar-background.png');
+    background-size: 1300px 700px;
+    background-repeat: repeat;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: 0.5s ease-in-out;
+}
+
+.side-menu-content a,
+.side-menu-content a:visited,
+.side-menu-content a:focus {
+    color: white;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.side-menu-content a:hover {
+    background-color: rgb(242, 242, 242);
+    color: #1264a3;
+}
+
+/* Sticks the nav to the top of the page */
+#top-nav {
+    position: fixed;
+}
+
+
+/**
+   * Animation classes
+   */
+.show-menu {
+    opacity: 1;
+    transform: translateX(0%);
+}
+
+/* make background image darker */
+.image-mask-darken {
+    position: relative;
+}
+
+.image-mask-darken::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    content: "";
+
+}
+
+.wmt-main-photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 550px;
+    background-image: url("section-background-image.jpg");
+    background-position: center center;
+    background-size: cover;
+}
+
+.wmt-intro-content {
+    color: white;
+    position: absolute;
+    text-align: center;
+    width: 500px;
+}
+
+.wmt-intro-header {
+    font-size: 50px;
+    margin-top: 50px;
+    margin-bottom: 60px;
+}
+
+.wmt-intro-subtitle {
+    font-size: 18px;
+}
+
+.wmt-button {
+    background-color: rgba(60, 102, 142, 0.8);
+    border-bottom: 3px solid rgb(27, 53, 78);
+    border-radius: 5px;
+    font-size: 20px;
+    width: 250px;
+    margin: 30px auto;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.4s ease-in;
+}
+
+.wmt-button:hover {
+    background-color: rgb(20, 42, 62);
+}
+
+.wmt-button a {
+    text-decoration: none;
+    color: white;
+}
+
+.wmt-button-text {
+    padding: 10px;
+}
+
+/* slogan bar */
+.wmt-slogan {
+    color: black;
+    text-align: center;
+    font-size: 20px;
+    margin: 20px auto;
+    padding: 2px;
+}
+
+/* intro picture */
+.wmt-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 15px;
+    padding: 15px;
+    background-color: white;
+    position: relative;
+    margin: 20px;
+}
+
+/* makes photo gallery responsive for mobile */
+@media (min-width: 568px) {
+    .wmt-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.wmt-grid-item {
+    display: flex;
+    flex-direction: row;
+    border-radius: 5px;
+    background-color: white;
+    height: 600px;
+    ;
+}
+
+.wmt-tours-image {
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 600px;
+    position: relative;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.wmt-tours-image-1 {
+    background-image: url('preguin.jpg');
+}
+
+.wmt-tours-image-2 {
+    background-image: url('puffing-train.jpg');
+}
+
+.wmt-tours-image-3 {
+    background-image: url('12-apostles.jpg');
+}
+
+.wmt-middle-phrase {
+    margin-bottom: 0;
+    text-align: center;
+    background-color: white;
+    cursor: pointer;
+    transition: 0.4s ease-in-out
+}
+
+.wmt-middle-phrase p {
+    color: black;
+    font-size: 20px;
+}
+
+
+.wmt-middle-phrase p a {
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.wmt-middle-phrase p:hover {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* price items */
+.wmt-grid-price {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 30px;
+    padding: 20px;
+    background-color: rgba(84, 140, 201, 0.05);
+    position: relative;
+    margin: 20px;
+}
+
+/* makes price list responsive for mobile */
+@media (min-width: 568px) {
+    .wmt-grid-price {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+
+.wmt-grid-price-item {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    background-color: white;
+    height: 550px;
+    ;
+}
+
+.wmt-tours-price-image {
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 400px;
+    position: relative;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.hot-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(191, 99, 45, 0.762);
+    color: white;
+    text-transform: uppercase;
+    width: 50px;
+    height: 40px;
+    padding: 0px 3px;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-size: 18px;
+    border-right: 1px solid rgb(141, 72, 32);
+    border-bottom: 1px solid rgb(141, 72, 32);
+}
+
+.wmt-tours-image-4 {
+    background-image: url('great\ ocean\ road.jpg');
+}
+
+.wmt-tours-image-5 {
+    background-image: url('philip\ bay.jpg');
+}
+
+.wmt-tours-image-6 {
+    background-image: url('nate-watson-uKK5AZQN8rE-unsplash.jpg');
+}
+
+.wmt-grid-price-info {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 0px 0px 10px;
+    margin: 0px;
+}
+
+.wmt-price-display {
+    transition: 3ms ease-in-out;
+}
+
+.wmt-price-display a:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+.wmt-price-title,
+.wmt-price-des {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+.wmt-price-title h3 {
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 10px;
+
+}
+
+.wmt-price-des p {
+    color: black;
+    padding: 0px;
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.price-display {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px auto;
+    font-size: 18px;
+    width: 180px;
+    background-color: red;
+    border-radius: 3px;
+    margin-top: 15px;
+}
+
+.price-display a {
+    text-decoration: none;
+    color: white;
+}
+
+.wmt-grid-price-info li {
+    list-style: none;
+    padding: 0px 0px 2px 0px;
+}
+
+
+/* for footer */
+footer {
+    background-color: rgba(84, 140, 201, 0.3);
+    color: black;
+    height: 100%;
+}
+
+.wmt-footer-navi {
+    display: block;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* makes footer list responsive for mobile */
+@media (min-width: 1085px) {
+    .wmt-footer-navi {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+.footer-links {
+    padding: 20px 0px 0px 30px;
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+.footer-links li:hover {
+    background-color: rgba(84, 140, 201, 0.05);
+    color: red;
+}
+
+footer ul {
+    list-style: none;
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    opacity: .5;
+    padding: 0px;
+}
+
+footer li {
+    margin: 0px 20px;
+}
+
+.copyright li {
+    font-size: 10px;
+    font-weight: normal;
+    margin: 0px 30px;
+}
